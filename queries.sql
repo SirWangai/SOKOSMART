@@ -121,6 +121,11 @@ having count(o.order_id) > 5;
 
 -- Q27: Calculate average customer spending by segment.
 -- note: average spending is defined as the total revenue from completed orders per customer, averaged across all purchasing customers in a segment.
+/* Evaluated on completed orders only (`order_status = 'Completed'`).
+* SUM(quantity * unit_price * (1 - discount / 100.0)) per active purchasing customer.
+* The outer query averages these individual customer totals across each
+* Customer segments considered (`VIP`, `Corporate`, `Retail`).
+*/
 with customer_totals as (
     select c.customer_segment, c.customer_id, sum(o.quantity * o.unit_price * (1 - o.discount / 100.0)) as total_spent
     from customers c
