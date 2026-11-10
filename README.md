@@ -35,18 +35,18 @@ The database models retail operations across Kenya using two core entities:
 
 The 46 business questions in `queries.sql` cover four primary analytical tiers:
 
-1. **Descriptive & Exploratory Analysis (Q1 – Q20):**
+1. **Descriptive & Exploratory Analysis (Q1 - Q20):**
    * Record retrieval, demographic distribution across Kenyan cities, price spreads, payment method preferences (M-Pesa dominance), and cancellation rates.
 
-2. **Relational Analysis & Customer Behavior (Q21 – Q30):**
+2. **Relational Analysis & Customer Behavior (Q21 - Q30):**
    * Multi-table joins, lifetime value (LTV) calculations, cross-category purchasing habits, VIP customer preferences, and inactive customer detection.
 
-3. **Advanced Aggregations & Financial Health (Q31 – Q42):**
+3. **Advanced Aggregations & Financial Health (Q31 - Q42):**
    * CTE-based gross revenue and profit margin calculations across product categories.
    * Window functions (`RANK()`, `DENSE_RANK()`, `ROW_NUMBER()`, `NTILE(4)`) for customer spend segmentation and category rankings.
    * Time-series tracking: cumulative revenue running totals, lagged monthly sales, and Month-over-Month (MoM) revenue percentage growth rates.
 
-4. **Database Objects & Executive Reporting (Q43 – Q46):**
+4. **Database Objects & Executive Reporting (Q43 - Q46):**
    * Reusable views (`monthly_sales_summary`) aggregating monthly orders, revenue, cost, and net profit.
    * Stored PL/pgSQL function (`get_customer_revenue(p_customer_id)`) returning completed order revenue.
    * Customer value tier segmentation (`High`, `Medium`, `Low`).
@@ -125,7 +125,7 @@ Applying running totals, lagged month-over-month growth, and ranking metrics:
    ```sql
    set search_path to retail_analytics;
    ```
-3. **Run Individual Queries:** Place your cursor inside any query block (`-- QX:`) and press `Ctrl + Enter`.
+3. **Run Individual Queries:** Place your cursor inside any query block and press `Ctrl + Enter`.
 4. **Run in Batches:** Highlight the target queries and press `Alt + X`.
 
 ---
